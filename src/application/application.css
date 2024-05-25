@@ -1,0 +1,156 @@
+/* General styles for the entire application */
+.root {
+    -fx-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Styles for TabPane */
+.tab-pane {
+    -fx-tab-max-width: 150px;
+}
+
+/* Styles for Tabs */
+.tab {
+    -fx-background-color: #F0F0F0;
+    -fx-text-base-color: #333333;
+    -fx-padding: 5 10 5 10;
+}
+
+.tab:selected {
+    -fx-background-color: #E0E0E0;
+    -fx-text-base-color: #000000;
+}
+
+/* Styles for VBox and HBox */
+.vbox {
+    -fx-spacing: 10;
+    -fx-padding: 10;
+    -fx-background-color: #FAFAFA;
+}
+
+.hbox {
+    -fx-spacing: 10;
+    -fx-padding: 10;
+    -fx-background-color: #FAFAFA;
+}
+
+/* Styles for Buttons */
+.button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-padding: 4 12 4 12;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+}
+
+/* Styles for TextFields */
+.text-field {
+    -fx-border-color: #CCCCCC;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-padding: 5;
+    -fx-background-color: #FFFFFF;
+}
+
+.text-field:focused {
+    -fx-border-color: #4CAF50;
+    -fx-background-color: #FFFFFF;
+}
+
+/* Styles for ComboBoxes */
+.combo-box {
+    -fx-border-color: #CCCCCC;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-background-color: #FFFFFF;
+}
+
+.combo-box:focused {
+    -fx-border-color: #4CAF50;
+    -fx-background-color: #FFFFFF;
+}
+
+/* Styles for Labels */
+.label {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2E7D32;
+}
+
+/* Styles for TableView and TableColumn */
+.table-view {
+    -fx-border-color: #CCCCCC;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-background-color: #FFFFFF;
+}
+
+.table-column {
+    -fx-font-size: 13px;
+    -fx-alignment: CENTER-LEFT;
+    -fx-background-color: #F9F9F9;
+    -fx-padding: 5 10 5 10;
+}
+
+/* Row hover effect for TableView */
+.table-row-cell:hover {
+    -fx-background-color: #E8F5E9;
+}
+
+/* Header style for TableView */
+.table-view .column-header-background {
+    -fx-background-color: #2E7D32;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: #2E7D32;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 5 10 5 10;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* Custom styles for specific components using their fx:id */
+#addCompetitionButton, #deleteCompetitionButton, #addCompetitorButton, #deleteCompetitorButton, #addScoreButton, #deleteScoreButton {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-padding: 5 10 5 10;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+#addCompetitionButton:hover, #deleteCompetitionButton:hover, #addCompetitorButton:hover, #deleteCompetitorButton:hover, #addScoreButton:hover, #deleteScoreButton:hover {
+    -fx-background-color: #1976D2;
+}
+
+/* Styles for ComboBox items */
+.combo-box .list-cell {
+    -fx-padding: 5 10 5 10;
+}
+
+.combo-box .list-cell:filled:selected, .combo-box .list-cell:filled:hover {
+    -fx-background-color: #E0E0E0;
+}
+
+/* Additional styles for more color accents */
+.tile-pane {
+    -fx-background-color: #F5F5F5;
+    -fx-padding: 10;
+    -fx-border-color: #E0E0E0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+}
+
+.anchor-pane {
+    -fx-background-color: #F8F8F8;
+}
+

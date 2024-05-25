@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="629.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.FrisbeeGolfController">
+   <children>
+      <TabPane prefHeight="528.0" prefWidth="629.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab fx:id="CompetitionsTab" onSelectionChanged="#PopulateCompetitionTableView" text="Competitions">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutY="-1.0" prefHeight="496.0" prefWidth="629.0">
+                           <children>
+                              <HBox prefHeight="135.0" prefWidth="629.0">
+                                 <children>
+                                    <TabPane prefHeight="172.0" prefWidth="631.0" tabClosingPolicy="UNAVAILABLE">
+                                       <tabs>
+                                          <Tab fx:id="addCompetition" text="Add Competition">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="122.0" prefWidth="600.0">
+                                                   <children>
+                                                      <TilePane prefHeight="108.0" prefWidth="629.0">
+                                                         <children>
+                                                            <ComboBox fx:id="SerieComboCompetition" prefWidth="150.0" promptText="Serie">
+                                                               <TilePane.margin>
+                                                                  <Insets left="10.0" top="10.0" />
+                                                               </TilePane.margin>
+                                                            </ComboBox>
+                                                            <ComboBox fx:id="FieldComboCompetition" layoutX="20.0" layoutY="20.0" prefWidth="150.0" promptText="Field">
+                                                               <TilePane.margin>
+                                                                  <Insets left="10.0" top="10.0" />
+                                                               </TilePane.margin>
+                                                            </ComboBox>
+                                                            <Button fx:id="addCompetitionButton" mnemonicParsing="false" onAction="#addCompetition" prefHeight="32.0" prefWidth="131.0" text="Add Competition">
+                                                               <TilePane.margin>
+                                                                  <Insets top="10.0" />
+                                                               </TilePane.margin>
+                                                               <font>
+                                                                  <Font size="11.0" />
+                                                               </font>
+                                                            </Button>
+                                                            <ComboBox fx:id="GenderComboCompetition" prefWidth="150.0" promptText="Gender">
+                                                               <TilePane.margin>
+                                                                  <Insets left="10.0" top="10.0" />
+                                                               </TilePane.margin>
+                                                            </ComboBox>
+                                                            <TextField fx:id="addCompetitionName" promptText="Competition's Name">
+                                                               <TilePane.margin>
+                                                                  <Insets left="10.0" top="10.0" />
+                                                               </TilePane.margin>
+                                                            </TextField>
+                                                         </children>
+                                                      </TilePane>
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                          </Tab>
+                                          <Tab fx:id="deleteCompetition" text="Delete Competition">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="128.0" prefWidth="629.0">
+                                                   <children>
+                                                      <TilePane prefHeight="110.0" prefWidth="637.0">
+                                                         <children>
+                                                            <ComboBox fx:id="SerieComboCompetitionDelete" prefHeight="27.0" prefWidth="126.0" promptText="Serie">
+                                                               <TilePane.margin>
+                                                                  <Insets left="10.0" top="10.0" />
+                                                               </TilePane.margin>
+                                                            </ComboBox>
+                                                            <ComboBox fx:id="FieldComboCompetitionDelete" prefHeight="27.0" prefWidth="139.0" promptText="Field">
+                                                               <TilePane.margin>
+                                                                  <Insets left="10.0" top="10.0" />
+                                                               </TilePane.margin>
+                                                            </ComboBox>
+                                                            <Button fx:id="deleteCompetitionButton" mnemonicParsing="false" onAction="#deleteCompetition" prefHeight="29.0" prefWidth="137.0" text="Delete Competition">
+                                                               <TilePane.margin>
+                                                                  <Insets left="50.0" top="10.0" />
+                                                               </TilePane.margin>
+                                                               <font>
+                                                                  <Font size="9.0" />
+                                                               </font>
+                                                            </Button>
+                                                            <ComboBox fx:id="GenderComboCompetitionDelete" prefHeight="25.0" prefWidth="125.0" promptText="Gender">
+                                                               <TilePane.margin>
+                                                                  <Insets left="10.0" top="10.0" />
+                                                               </TilePane.margin>
+                                                            </ComboBox>
+                                                            <TextField fx:id="deleteCompetitionName" promptText="Competition's Name">
+                                                               <TilePane.margin>
+                                                                  <Insets left="10.0" top="10.0" />
+                                                               </TilePane.margin>
+                                                            </TextField>
+                                                         </children>
+                                                      </TilePane>
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                          </Tab>
+                                       </tabs>
+                                    </TabPane>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="53.0" prefWidth="629.0">
+                                 <children>
+                                    <TextArea fx:id="TextInfoForCompetitions" prefHeight="40.0" prefWidth="634.0" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <HBox layoutY="172.0" prefHeight="356.0" prefWidth="629.0">
+                           <children>
+                              <TableView fx:id="CompetitionTableView" prefHeight="325.0" prefWidth="629.0">
+                                 <columns>
+                                    <TableColumn fx:id="CompetitionNameColumn" prefWidth="187.3333181142807" text="Competition" />
+                                    <TableColumn fx:id="CompetitionFieldColumn" prefWidth="113.33335876464844" text="Field" />
+                                    <TableColumn fx:id="CompetitionSerieColumn" prefWidth="110.0" text="Serie" />
+                                    <TableColumn fx:id="CompetitionGenderColumn" prefWidth="84.6666259765625" text="Gender" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="CompetitorsTab" onSelectionChanged="#PopulateCompetitorTableView" text="Competitors">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="1.0" prefHeight="495.0" prefWidth="629.0" />
+                        <HBox layoutX="2.0" prefHeight="138.0" prefWidth="629.0">
+                           <children>
+                              <TabPane prefHeight="149.0" prefWidth="627.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab fx:id="addCompetitor" text="Add Competitors">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TilePane prefHeight="113.0" prefWidth="629.0">
+                                                   <children>
+                                                      <TextField fx:id="addCompetitorName" promptText="Competitor's Name">
+                                                         <TilePane.margin>
+                                                            <Insets left="10.0" top="10.0" />
+                                                         </TilePane.margin>
+                                                      </TextField>
+                                                      <ComboBox fx:id="SerieCombo" layoutX="20.0" layoutY="20.0" prefWidth="150.0" promptText="Serie">
+                                                         <TilePane.margin>
+                                                            <Insets left="10.0" top="10.0" />
+                                                         </TilePane.margin>
+                                                      </ComboBox>
+                                                      <ComboBox fx:id="GenderCombo" prefWidth="150.0" promptText="Gender">
+                                                         <TilePane.margin>
+                                                            <Insets left="10.0" top="10.0" />
+                                                         </TilePane.margin>
+                                                      </ComboBox>
+                                                      <Button fx:id="addCompetitorButton" mnemonicParsing="false" onAction="#addCompetitor" prefHeight="27.0" prefWidth="137.0" text="Add Competitor">
+                                                         <TilePane.margin>
+                                                            <Insets bottom="-10.0" left="20.0" right="10.0" top="20.0" />
+                                                         </TilePane.margin>
+                                                         <font>
+                                                            <Font size="13.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </TilePane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab fx:id="deleteCompetitor" text="Delete Competitors">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TilePane prefHeight="112.0" prefWidth="600.0">
+                                                   <children>
+                                                      <TextField fx:id="deleteCompetitorName" promptText="Competitor's Name">
+                                                         <TilePane.margin>
+                                                            <Insets left="9.0" top="9.0" />
+                                                         </TilePane.margin>
+                                                      </TextField>
+                                                      <ComboBox fx:id="SerieComboDelete" prefWidth="150.0" promptText="Serie">
+                                                         <TilePane.margin>
+                                                            <Insets left="12.0" top="8.0" />
+                                                         </TilePane.margin>
+                                                      </ComboBox>
+                                                      <ComboBox fx:id="GenderComboDelete" prefWidth="150.0" promptText="Gender">
+                                                         <TilePane.margin>
+                                                            <Insets left="12.0" top="8.0" />
+                                                         </TilePane.margin>
+                                                      </ComboBox>
+                                                      <Button fx:id="deleteCompetitorButton" mnemonicParsing="false" onAction="#deleteCompetitor" prefHeight="27.0" prefWidth="135.0" text="Delete Competitor">
+                                                         <TilePane.margin>
+                                                            <Insets bottom="-10.0" left="18.0" right="12.0" top="18.0" />
+                                                         </TilePane.margin>
+                                                      </Button>
+                                                   </children>
+                                                </TilePane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                           </children>
+                        </HBox>
+                        <HBox layoutY="142.0" prefHeight="36.0" prefWidth="638.0">
+                           <children>
+                              <TextArea fx:id="TextInfoForCompetitors" prefHeight="40.0" prefWidth="629.0" />
+                           </children>
+                        </HBox>
+                        <HBox layoutY="178.0" prefHeight="323.0" prefWidth="639.0">
+                           <children>
+                              <TableView fx:id="CompetitorTableView" prefHeight="366.0" prefWidth="629.0">
+                                 <columns>
+                                    <TableColumn fx:id="CompetitorNameColumn" prefWidth="187.3333181142807" text="Participants" />
+                                    <TableColumn fx:id="CompetitorSerieColumn" prefWidth="102.66667175292969" text="Serie" />
+                                    <TableColumn fx:id="CompetitorGenderColumn" prefWidth="102.0" text="Gender" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Scores">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="587.0" prefWidth="815.0">
+                     <children>
+                        <VBox layoutX="-2.0" prefHeight="538.0" prefWidth="640.0" />
+                        <HBox layoutY="1.0" prefHeight="133.0" prefWidth="629.0">
+                           <children>
+                              <TabPane prefHeight="150.0" prefWidth="630.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab fx:id="addScore" text="Add Score">
+                                       <content>
+                                          <AnchorPane prefHeight="89.0" prefWidth="600.0">
+                                             <children>
+                                                <TilePane prefHeight="102.0" prefWidth="629.0">
+                                                   <children>
+                                                      <TextField fx:id="addCompetitionNameScore" promptText="Competition's Name">
+                                                         <TilePane.margin>
+                                                            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                                         </TilePane.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="addCompetitorNameScore" prefHeight="25.0" prefWidth="139.0" promptText="Competitor's Name">
+                                                         <TilePane.margin>
+                                                            <Insets left="15.0" right="15.0" />
+                                                         </TilePane.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="ThrowsForLane" prefHeight="25.0" prefWidth="83.0" promptText="Number Of Throws">
+                                                         <TilePane.margin>
+                                                            <Insets left="40.0" right="40.0" />
+                                                         </TilePane.margin>
+                                                      </TextField>
+                                                      <ComboBox fx:id="LaneComboScore" prefHeight="25.0" prefWidth="101.0" promptText="Lanes">
+                                                         <TilePane.margin>
+                                                            <Insets bottom="20.0" top="-27.0" />
+                                                         </TilePane.margin>
+                                                      </ComboBox>
+                                                      <Button fx:id="addScoreButton" mnemonicParsing="false" onAction="#addScore" prefHeight="31.0" prefWidth="87.0" text="Add Score">
+                                                         <TilePane.margin>
+                                                            <Insets bottom="20.0" left="120.0" top="-27.0" />
+                                                         </TilePane.margin>
+                                                      </Button>
+                                                   </children>
+                                                </TilePane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab fx:id="deleteScore" text="Delete Score">
+                                       <content>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <TilePane layoutX="-4.0" layoutY="-1.0" prefHeight="112.0" prefWidth="629.0">
+                                                   <children>
+                                                      <TextField fx:id="deleteCompetitionNameScore" promptText="Competition's Name">
+                                                         <TilePane.margin>
+                                                            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                                         </TilePane.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="deleteCompetitorNameScore" promptText="Competitor's Name">
+                                                         <TilePane.margin>
+                                                            <Insets left="15.0" right="15.0" />
+                                                         </TilePane.margin>
+                                                      </TextField>
+                                                      <Button fx:id="deleteScoreButton" mnemonicParsing="false" onAction="#deleteScore" text="Delete Score" />
+                                                      <ComboBox fx:id="LaneComboScoreDelete" prefHeight="25.0" prefWidth="109.0" promptText="Lanes">
+                                                         <TilePane.margin>
+                                                            <Insets bottom="20.0" top="-27.0" />
+                                                         </TilePane.margin>
+                                                      </ComboBox>
+                                                   </children>
+                                                </TilePane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                           </children>
+                        </HBox>
+                        <HBox layoutY="126.0" prefHeight="50.0" prefWidth="629.0">
+                           <children>
+                              <TextArea fx:id="TextInfoForScores" prefHeight="45.0" prefWidth="701.0" />
+                           </children>
+                        </HBox>
+                        <HBox layoutY="167.0" prefHeight="389.0" prefWidth="629.0">
+                           <children>
+                              <TabPane prefHeight="309.0" prefWidth="637.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab fx:id="menRacing" onSelectionChanged="#PopulateMenRacingTableView" text="Men's Racing Series">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="323.0" prefWidth="789.0">
+                                             <children>
+                                                <TableView fx:id="MenRacingSerieTableView" layoutX="-4.0" layoutY="-8.0" prefHeight="341.0" prefWidth="637.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="MenRacingCompetitionNameColumn" prefWidth="171.99999475479126" text="Competition" />
+                                                      <TableColumn fx:id="MenRacingCompetitorNameColumn" prefWidth="136.0000457763672" text="Participants" />
+                                                      <TableColumn fx:id="MenRacingTotalThrowsColumn" prefWidth="135.33331298828125" text="Total Throws" />
+                                                      <TableColumn fx:id="MenRacingScoreColumn" prefWidth="78.66665649414062" text="Score" />
+                                                   </columns>
+                                                   <padding>
+                                                      <Insets top="10.0" />
+                                                   </padding>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab fx:id="menHobby" onSelectionChanged="#PopulateMenHobbyTableView" text="Men's Hobby Series">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="276.0" prefWidth="637.0">
+                                             <children>
+                                                <TableView fx:id="MenHobbySerieTableView" layoutX="-4.0" layoutY="1.0" prefHeight="323.0" prefWidth="637.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="MenHobbyCompetitionNameColumn" prefWidth="157.99999499320984" text="Competition" />
+                                                      <TableColumn fx:id="MenHobbyCompetitorNameColumn" prefWidth="146.6667022705078" text="Participants" />
+                                                      <TableColumn fx:id="MenHobbyTotalThrowsColumn" prefWidth="134.66668701171875" text="Total Throws" />
+                                                      <TableColumn fx:id="MenHobbyScoreColumn" prefWidth="80.66665649414062" text="Score" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab fx:id="womenRacing" onSelectionChanged="#PopulateWomenRacingTableView" text="Women's Racing Series">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="295.0" prefWidth="637.0">
+                                             <children>
+                                                <TableView fx:id="WomenRacingSerieTableView" layoutX="-6.0" layoutY="-8.0" prefHeight="327.0" prefWidth="641.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="WomenRacingCompetitionNameColumn" prefWidth="169.99999475479126" text="Competition" />
+                                                      <TableColumn fx:id="WomenRacingCompetitorNameColumn" prefWidth="126.66667175292969" text="Participants" />
+                                                      <TableColumn fx:id="WomenRacingTotalThrowsColumn" prefWidth="142.66668701171875" text="Total Throws" />
+                                                      <TableColumn fx:id="WomenRacingScoreColumn" prefWidth="78.66671752929688" text="Score" />
+                                                   </columns>
+                                                   <padding>
+                                                      <Insets top="10.0" />
+                                                   </padding>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab fx:id="womenHobby" onSelectionChanged="#PopulateWomenHobbyTableView" text="Women's Hobby Series">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="299.0" prefWidth="637.0">
+                                             <children>
+                                                <TableView fx:id="WomenHobbySerieTableView" layoutX="3.0" layoutY="-8.0" prefHeight="328.0" prefWidth="629.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="WomenHobbyCompetitionNameColumn" prefWidth="161.3333384990692" text="Competition" />
+                                                      <TableColumn fx:id="WomenHobbyCompetitorNameColumn" prefWidth="126.66670227050781" text="Participants" />
+                                                      <TableColumn fx:id="WomenHobbyTotalThrowsColumn" prefWidth="129.33331298828125" text="Total Throws" />
+                                                      <TableColumn fx:id="WomenHobbyScoreColumn" prefWidth="92.6666259765625" text="Score" />
+                                                   </columns>
+                                                   <padding>
+                                                      <Insets top="10.0" />
+                                                   </padding>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </TabPane>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="SeasonPointsTab" onSelectionChanged="#PopulateSeasonPointsTableView" text="Season Points">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="454.0" prefWidth="629.0">
+                     <children>
+                        <VBox layoutX="-2.0" prefHeight="534.0" prefWidth="629.0">
+                           <children>
+                              <HBox prefHeight="79.0" prefWidth="629.0">
+                                 <children>
+                                    <Label prefHeight="79.0" prefWidth="634.0" text="FrisbeeGolf Total Points By Participants" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="447.0" prefWidth="629.0">
+                                 <children>
+                                    <TableView fx:id="SeasonPointsTableView" prefHeight="427.0" prefWidth="629.0">
+                                       <columns>
+                                          <TableColumn fx:id="CompetitorNameSeasonColumn" prefWidth="187.3333181142807" text="Participants" />
+                                          <TableColumn fx:id="SeasonalTotalScoreColumn" prefWidth="156.6666717529297" text="Seasonal Points" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</VBox>
